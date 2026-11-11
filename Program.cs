@@ -6,11 +6,12 @@
 
     class Program
     {
+        // Main är där programmet startar
         static void Main(string[] args)
         {
 
-            // Animal är en basklass det betyder att dem andra Animals klasserna kan ärva kod från den
-            // Skapar våra olika djur
+            // Skapar våra olika djur med deras standardvärden
+            // new används för att skapa ett nytt objekt
             Dog dog = new Dog();
             Cat cat = new Cat();
             Elephant elephant = new Elephant();
@@ -20,7 +21,8 @@
             Console.WriteLine("Välkommen till vårt Zoo!");
             Console.WriteLine();
 
-            // Alla djuren får göra sina ljud
+            // Alla djur använder makeSound men har olika ljud
+            // Det fungerar eftersom vi använder override
             dog.makeSound();
             cat.makeSound();
             elephant.makeSound();
@@ -38,13 +40,13 @@
 
             Console.WriteLine();
 
-            // Testar metoder som ärvs från Animal
+            // Testar metoder som Dog och Cat ärver från Animal
             dog.Eat();
             cat.Sleep();
 
             Console.WriteLine();
 
-            // Visar information om hunden
+            // Visar hundens information med metoden från Animal
             dog.ShowInfo();
         }
     }

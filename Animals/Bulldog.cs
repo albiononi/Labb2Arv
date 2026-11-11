@@ -4,27 +4,28 @@ using System.Text;
 
 namespace ZooProject.Animals
 {
-    // Bulldog ärver från Dog
+    // Bulldog ärver från Dog som redan ärver från Animal
+    // Det här visar arv i två nivåer
     public class Bulldog : Dog
     {
-        // En egenskap som är speciell för bulldog
-        // Vi använder get och set för att ta ett värde och för att ändra ett värde. Så get betyder hämta, set betyder att placera typ. 
-        // Vi använder get och set på alla egenskaper så det vill säga att vi använder det på Cat, Dog, Chihuahua osv.
+        // Bulldogens egen egenskap
         public bool HasWrinkles { get; set; }
 
+        // Skapar bulldogen med standardvärden
+        // base anropar Dog som sedan skickar värden till Animal
         public Bulldog(string name = "Bosse", int age = 4)
             : base(name, age)
         {
             HasWrinkles = true;
         }
 
-        // Bulldog har en egen metod
+        // Bulldogens egen metod
         public void Snore()
         {
             Console.WriteLine(Name + " snarkar högt.");
         }
 
-        // Ändrar ljudet så bulldogen låter annorlunda
+        // Ändrar makeSound så bulldogen har ett eget läte
         public override void makeSound()
         {
             Console.WriteLine(Name + " säger: Voff! Grrr!");

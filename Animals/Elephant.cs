@@ -8,21 +8,24 @@ namespace ZooProject.Animals
     public class Elephant : Animal
     {
         // Elefantens egen egenskap
+        // double används eftersom längden kan ha decimaler
         public double TrunkLength { get; set; }
 
+        // Skapar elefanten med standardvärden
+        // base skickar värden till Animal
         public Elephant(string name = "Dumbo", int age = 10)
             : base(name, age, 2000, "Grå", false)
         {
             TrunkLength = 2;
         }
 
-        // Elefanten använder sin snabel
+        // Elefantens egen metod för att spruta vatten
         public void SprayWater()
         {
             Console.WriteLine(Name + " sprutar vatten med sin snabel.");
         }
 
-        // Elefantens eget läte
+        // Ändrar makeSound till elefantens ljud
         public override void makeSound()
         {
             Console.WriteLine(Name + " säger: Tuuut!");

@@ -7,14 +7,15 @@ namespace ZooProject.Animals
     public class Animal
     {
         // Egenskaper som alla djur har
+        // get hämtar värdet och set används för att ändra det
         public string Name { get; set; }
         public int Age { get; set; }
         public double Weight { get; set; }
         public string Color { get; set; }
         public bool IsHungry { get; set; }
 
-        // Constructor som ger djuren deras värden
-        // En constructor ger djuren ett värde när dem skapas, jag har ochså lagt inn standardvärde så att djuren värden även om jag inte skriver inn några själv.
+        // Konstruktorn ger djuren värden när de skapas
+        // Här finns också standardvärden om vi inte anger några egna
         public Animal(string name = "Okänd", int age = 1,
                       double weight = 10, string color = "Brun",
                       bool isHungry = false)
@@ -26,20 +27,21 @@ namespace ZooProject.Animals
             IsHungry = isHungry;
         }
 
-        // Alla djur kan äta
+        // Alla djur kan äta, därför har vi metoden här
         public void Eat()
         {
             Console.WriteLine(Name + " äter mat.");
+            // Djuret är inte hungrigt efter att ha ätit
             IsHungry = false;
         }
 
-        // Alla djur kan sova
+        // Alla djur kan också sova
         public void Sleep()
         {
             Console.WriteLine(Name + " sover.");
         }
 
-        // Visar information om djuret
+        // Skriver ut informationen vi har om djuret
         public void ShowInfo()
         {
             Console.WriteLine("Namn: " + Name);
@@ -49,8 +51,8 @@ namespace ZooProject.Animals
             Console.WriteLine("Hungrig: " + IsHungry);
         }
 
-        // Virtual gör att andra djur kan ändra ljudet, det gör så att andra klasser får ändra hur metoden fungerar. 
-        // Så jag använder Virtual och ovverride för att alla djur ska ha metoden makeSound, men dem ska göra olika ljud så virtual tillåter att metoden ändras, och override används för att ändra det. 
+        // virtual gör att andra djurklasser kan ändra metoden
+        // Vi använder det eftersom alla djur gör olika ljud
         public virtual void makeSound()
         {
             Console.WriteLine("Djuret gör ett ljud.");
